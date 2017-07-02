@@ -1,7 +1,7 @@
-# Angular2 Tour of Heroes
+# Ecom
 
 ## Description
-Angular2 tutorial
+Simple ecommerce web application
 
 ## Usage
 
