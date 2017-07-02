@@ -1,17 +1,11 @@
 <h3 *ngIf="many">All Products:</h3>
-<div>
-    <label>Item name:</label><input #itemName type="text" placeholder="item name"/>
-    <button (click)="add(itemName.value); itemName.value=''">
-        Add
-    </button>
-</div>
 <ul class="items">
     <li *ngFor="let item of items"
         [class.selected]="item === selectedItem" (click)="onSelect(item)">
-        <span class="badge">{{item.id}}</span>
-        <span>{{item.name}}</span>
-        <button class="delete"
-            (click)="delete(item); $event.stopPropagation()">x</button>
+        <img src="{{item.img || 'images/dpoy.png'}}">
+        <div class=deets>
+            <p>{{item.name}}</p>
+        </div>
     </li>
 </ul>
 <div *ngIf="selectedItem">
