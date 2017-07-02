@@ -15,6 +15,10 @@ interface Nameable {
     name: string;
 }
 
+interface ItemCtor {
+    new (id: number, name: string, image: string): Item
+}
+
 @Injectable()
 export class BackendService {
     private url = 'api/items';
@@ -26,13 +30,13 @@ export class BackendService {
         return `app/items/?name=${term}`;
     }
     
-    getAll(type: new (id: number, name: string)=>any): Promise<any[]> {
+    getAll(type: ItemCtor): Promise<any[]> {
         return this.http.get(this.url)
             .toPromise()
             .then(resp => resp.json().data as any[]);
     }
 
-    get(type: new (id: number, name: string)=>any, id: number): Promise<any> {
+    get(type: ItemCtor, id: number): Promise<any> {
         return this.http.get(`${this.url}/${id}`)
             .toPromise()
             .then(resp => resp.json().data as any);
