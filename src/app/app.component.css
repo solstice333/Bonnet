@@ -37,3 +37,22 @@ h2 {
 .navbar a.active {
   color: #039be5;
 }
+.navbar .dropdown .dropdown-content {
+  list-style-type: none;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 37px;
+  background-color: grey;
+}
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+.navbar .dropdown .dropdown-content ul li {
+  position: relative;
+  bottom: 5px;
+  right: 20px;
+  margin: 0px;
+  display: block;
+}
+

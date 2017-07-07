@@ -1,6 +1,18 @@
 <h1>{{title}}</h1>
 <ul class="navbar">
     <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-    <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
+    <li class="dropdown">
+        <a routerLink="/products" routerLinkActive="active">Products</a>
+        <div class="dropdown-content">
+            <ul>
+                <li><a routerLink="#">All</a></li>
+                <li><a routerLink="#">Tees</a></li>
+                <li><a routerLink="#">Pants</a></li>
+                <li><a routerLink="#">Shorts</a></li>
+                <li><a routerLink="#">Socks</a></li>
+                <li><a routerLink="#">Underwear</a></li>
+            </ul>
+        </div>
+    </li>
 </ul>
 <router-outlet></router-outlet>
