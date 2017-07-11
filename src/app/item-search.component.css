@@ -7,6 +7,7 @@
 #search-component h4 {
   position: relative;
   top: 20px;
+  color: #595959;
 }
 .search-result {
   border-bottom: 1px solid gray;
