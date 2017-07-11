@@ -1,3 +1,13 @@
+#search-component ul {
+  position: absolute;
+  z-index: 1;
+  list-style-type: none;
+  right: 10px;
+}
+#search-component h4 {
+  position: relative;
+  top: 20px;
+}
 .search-result {
   border-bottom: 1px solid gray;
   border-left: 1px solid gray;
@@ -13,6 +23,9 @@
   background-color: #607D8B;
 }
 #search-box {
+  position: relative;
+  top: 3px;
+  right: 2px;
   width: 200px;
   height: 20px;
 }
