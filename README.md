@@ -18,4 +18,6 @@ Simple ecommerce web application
 - banner
 - start automating tests ASAP
 - checkout page?
+- refactor how filtering is done to get an items component based on category or query string
+- refactor dropdown menu to not use stubs
 
