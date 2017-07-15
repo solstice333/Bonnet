@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Item } from './item';
 import { ItemService } from './item.service';
 import { Router } from '@angular/router';
 import { LoggerService } from './logger.service';
+import { Filter, FilterOpt } from './filter';
 
 @Component({
   selector: 'items',
@@ -13,15 +14,24 @@ export class ItemsComponent {
   private selectedItem: Item;
   private items: Item[];
 
+  @Input() filter: Filter = new Filter(FilterOpt.ALL);
+
   constructor(
     private itemService: ItemService, 
     private router: Router,
     private logger: LoggerService) {}
 
   ngOnInit(): void {
-    this.itemService.items
-    .then(itemsReceived => this.items = itemsReceived)
-    .catch(error => console.error(error));
+    if (this.filter.opt === FilterOpt.ALL) {
+      this.itemService.items
+      .then(itemsReceived => this.items = itemsReceived)
+      .catch(error => console.error(error));
+    }
+    else if (this.filter.opt === FilterOpt.DEALS) {
+      this.itemService.items
+      .then(itemsReceived => this.items = itemsReceived.slice(0, 4))
+      .catch(error => console.error(error))
+    }
     this.items = [];
   }
 

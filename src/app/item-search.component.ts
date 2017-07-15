@@ -39,14 +39,14 @@ export class ItemSearchComponent implements OnInit {
 
     ngOnInit(): void {
         this.items = this.searchTerms
-            .debounceTime(300) // wait 300ms after each keystroke before considering the term
-            .distinctUntilChanged() // ignore if next search term is same as previous
-            .switchMap(term => { // switch to most recent search term
+            .debounceTime(300)
+            .distinctUntilChanged()
+            .switchMap((term: string) => {
                 return term ? 
                     this.itemSearchService.search(term) :
                     Observable.of([] as Item[])
                 })
-            .catch(error => {
+            .catch((error: any) => {
                 this.logger.error(error);
                 return Observable.of([] as Item[]);
             });
