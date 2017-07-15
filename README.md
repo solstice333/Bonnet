@@ -13,6 +13,7 @@ Simple ecommerce web application
 
 - product model: name, price, sizes, inventory count
 - product name: can't exceed a certain number of characters (use pipe?)
+- product click should redirect to details
 - add address to store (contact info page)
 - banner
 - start automating tests ASAP
