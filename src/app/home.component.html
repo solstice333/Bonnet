@@ -1,8 +1,10 @@
 <h3>Top Deals</h3>
-<div class="grid grid-pad">
-    <a *ngFor="let item of items" [routerLink]="['/detail', item.id]" class="col-1-4">
-        <div class="module item">
-            <h4>{{item.name}}</h4>
+<ul class="items">
+    <li *ngFor="let item of items"
+        [class.selected]="item === selectedItem" (click)="onSelect(item)">
+        <img src="{{item.img || 'images/dpoy.png'}}">
+        <div class=deets>
+            <p>{{item.name}}</p>
         </div>
-    </a>
-</div>
+    </li>
+</ul>
