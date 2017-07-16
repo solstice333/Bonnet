@@ -12,6 +12,7 @@ Simple ecommerce web application
 ## TODO
 
 - product model: name, price, sizes, inventory count
+- modularize groups of components, services, directives, etc.
 - product name: can't exceed a certain number of characters (use pipe?)
 - product click should redirect to details
 - add address to store (contact info page)
