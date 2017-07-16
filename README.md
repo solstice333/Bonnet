@@ -14,7 +14,7 @@ Simple ecommerce web application
 - product model: name, price, sizes, inventory count [DONE]
 - add on more product details to the view
 - product click should redirect to details
-- modularize groups of components, services, directives, etc.
+- modularize/organize groups of components, services, directives, etc.
 - product name: can't exceed a certain number of characters (use pipe?)
 - add address to store (contact info page)
 - banner
