@@ -1,2 +1,2 @@
-src/app/*js*
+src/app/**/*js*
 node_modules/
