@@ -5,6 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 // and if supplied represents the index of the character to capitalize.
 // |end| is optional, and if supplied, capitalizes the range of characters
 // between |start| and |end|, where |end| is exclusive.
+//
+// Usage:
+//  word | capitalize[:<start>:<end>]
+// Example:
+//  {{ 'foo' | capitalize }} // Foo
+//  {{ 'foo' | capitalize:1 }} // fOo
+//  {{ 'foo' | capitalize:0:2}} // FOo
 @Pipe({name: 'capitalize'})
 export class CapitalizePipe implements PipeTransform {
     transform(value: string, start: number=0, end: number=start + 1): string {
