@@ -9,6 +9,6 @@ export class AppComponent {
     private title: string;
 
     constructor() {
-        this.title = 'Solid Integrity';
+        this.title = 'Palmdale CocoTree';
     }
 }
