@@ -1,14 +1,10 @@
 <h3 *ngIf="many">All Products:</h3>
 <ul class="items">
     <li *ngFor="let item of items"
-        [class.selected]="item === selectedItem" (click)="onSelect(item)">
+        (click)="goToDetail(item)">
         <img src="{{item.image}}">
         <div class=deets>
             <p>{{item.name}}</p>
         </div>
     </li>
 </ul>
-<div *ngIf="selectedItem">
-    <h2>{{selectedItem.name | uppercase}} is my item</h2>
-    <button (click)="goToDetail()">View Details</button>
-</div>

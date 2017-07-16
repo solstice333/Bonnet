@@ -11,7 +11,6 @@ import { Filter, FilterOpt } from '../filter';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent { 
-  private selectedItem: Item;
   private items: Item[];
 
   @Input() filter: Filter = new Filter(FilterOpt.ALL);
@@ -37,35 +36,19 @@ export class ItemsComponent {
     this.items = [];
   }
 
-  onNameChange(event: string): void { 
-    this.logger.log(`${new Date()}: onNameChange: ${event}`);
-    this.selectedItem.name = event; 
-  }
-  
-  onSelect(item: Item): void { 
-    this.selectedItem = item;
-  }
-
-  goToDetail(): void {
-    this.router.navigate(['/detail', this.selectedItem.id]);
+  goToDetail(item: Item): void {
+    this.router.navigate(['/detail', item.id]);
   }
 
   add(name: string): void {
     name = name.trim();
     if (name)
       this.itemService.create(name)
-        .then(item => {
-          this.items.push(item);
-          this.selectedItem = null;
-        });
+        .then(item => this.items.push(item));
   }
 
   delete(item: Item): void {
     this.itemService.delete(item.id)
-      .then(() => {
-        this.items = this.items.filter(i => i !== item);
-        if (this.selectedItem === item) 
-          this.selectedItem = null;
-      })
+      .then(() => this.items = this.items.filter(i => i !== item))
   }
 }
