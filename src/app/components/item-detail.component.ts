@@ -1,9 +1,9 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
-import { Item } from './item';
-import { ItemService } from './item.service';
-import { LoggerService } from './logger.service';
+import { Item } from '../item';
+import { ItemService } from '../services/item.service';
+import { LoggerService } from '../services/logger.service';
 
 import 'rxjs/add/operator/switchMap';
 

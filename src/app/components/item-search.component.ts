@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Item } from './item'
+import { Item } from '../item'
 
-import { ItemSearchService } from './item-search.service'
-import { LoggerService } from './logger.service';
+import { ItemSearchService } from '../services/item-search.service'
+import { LoggerService } from '../services/logger.service';
 
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -43,7 +43,7 @@ export class ItemSearchComponent implements OnInit {
             .distinctUntilChanged()
             .switchMap((term: string) => {
                 return term ? 
-                    this.itemSearchService.search(term) :
+                    this.itemSearchService.search(term) as Observable<Item[]> :
                     Observable.of([] as Item[])
                 })
             .catch((error: any) => {

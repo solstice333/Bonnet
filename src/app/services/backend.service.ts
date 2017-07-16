@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
-import { Idable, Nameable, Item, ItemCtor, ItemIF } from './item';
+import { Idable, Nameable, Item, ItemCtor, ItemIF } from '../item';
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/toPromise';

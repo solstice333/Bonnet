@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Item } from './item';
+import { Item } from '../item';
 
 import { LoggerService } from './logger.service';
 import { BackendService } from './backend.service';

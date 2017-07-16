@@ -2,7 +2,7 @@
 <ul class="items">
     <li *ngFor="let item of items"
         [class.selected]="item === selectedItem" (click)="onSelect(item)">
-        <img src="{{item.img || 'images/dpoy.png'}}">
+        <img src="{{item.image}}">
         <div class=deets>
             <p>{{item.name}}</p>
         </div>

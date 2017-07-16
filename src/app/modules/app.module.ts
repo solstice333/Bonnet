@@ -5,18 +5,20 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
-import { AppComponent }  from './app.component';
-import { ItemDetailComponent } from './item-detail.component'
-import { ItemsComponent } from './items.component'
-import { HomeComponent } from './home.component';
-import { ItemSearchComponent } from './item-search.component';
-import { UnlessDirective } from './unless.directive'
-import { CapitalizePipe } from './capitalize.pipe';
+import { AppComponent }  from '../components/app.component';
+import { ItemDetailComponent } from '../components/item-detail.component'
+import { ItemsComponent } from '../components/items.component'
+import { HomeComponent } from '../components/home.component';
+import { ItemSearchComponent } from '../components/item-search.component';
 
-import { ItemService } from './item.service';
-import { LoggerService } from './logger.service';
-import { BackendService } from './backend.service';
-import { InMemoryDataService } from './in-memory-data.service';
+import { UnlessDirective } from '../directives/unless.directive'
+
+import { CapitalizePipe } from '../pipes/capitalize.pipe';
+
+import { ItemService } from '../services/item.service';
+import { LoggerService } from '../services/logger.service';
+import { BackendService } from '../services/backend.service';
+import { InMemoryDataService } from '../services/in-memory-data.service';
 
 @NgModule({
   imports: [ // make public view directives from imported modules

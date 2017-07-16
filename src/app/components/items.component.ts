@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { Item, Category } from './item';
-import { ItemService } from './item.service';
+import { Item, Category } from '../item';
+import { ItemService } from '../services/item.service';
 import { Router } from '@angular/router';
-import { LoggerService } from './logger.service';
-import { Filter, FilterOpt } from './filter';
+import { LoggerService } from '../services/logger.service';
+import { Filter, FilterOpt } from '../filter';
 
 @Component({
   selector: 'items',
