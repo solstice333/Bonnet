@@ -1,23 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
-import { Item } from './item';
+import { Idable, Nameable, Item, ItemCtor, ItemIF } from './item';
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
-
-interface Idable {
-    id: number;
-}
-
-interface Nameable {
-    name: string;
-}
-
-interface ItemCtor {
-    new (id: number, name: string, image: string): Item
-}
 
 @Injectable()
 export class BackendService {

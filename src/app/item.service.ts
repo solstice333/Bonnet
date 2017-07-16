@@ -13,15 +13,20 @@ export class ItemService {
         return Promise.reject(error.message || error);
     }
 
+    private rebind_to_proto(item: Item) {
+        for (let p of Object.getOwnPropertyNames(Item.prototype))
+            item[p] = Item.prototype[p];
+    }
+
     constructor(
         private logger: LoggerService,
         private backend: BackendService) {}
 
     get items(): Promise<Item[]> { 
         return this.backend.getAll(Item)
-            .then(items => {
+            .then((items: Item[]) => {
                 this.logger.log(JSON.stringify(items));
-                return items as Item[];
+                return items.map(i => Item.createFromObject(i)) as Item[];
             })
             .catch(this.handleError);
     }
@@ -30,7 +35,7 @@ export class ItemService {
         return this.backend.get(Item, id)
             .then(item => {
                 this.logger.log(JSON.stringify(item));
-                return item as Item;
+                return Item.createFromObject(item) as Item;
             })
             .catch(this.handleError);
     }

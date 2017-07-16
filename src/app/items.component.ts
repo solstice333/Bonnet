@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Item } from './item';
+import { Item, Category } from './item';
 import { ItemService } from './item.service';
 import { Router } from '@angular/router';
 import { LoggerService } from './logger.service';
@@ -29,7 +29,9 @@ export class ItemsComponent {
     }
     else if (this.filter.opt === FilterOpt.DEALS) {
       this.itemService.items
-      .then(itemsReceived => this.items = itemsReceived.slice(0, 4))
+      .then(itemsReceived => this.items = itemsReceived.filter(item => {
+          return item.hasCategory(new Category('sale'));
+        }))
       .catch(error => console.error(error))
     }
     this.items = [];
@@ -38,7 +40,7 @@ export class ItemsComponent {
   onNameChange(event: string): void { 
     this.logger.log(`${new Date()}: onNameChange: ${event}`);
     this.selectedItem.name = event; 
-  };
+  }
   
   onSelect(item: Item): void { 
     this.selectedItem = item;
