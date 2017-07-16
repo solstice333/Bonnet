@@ -13,8 +13,11 @@ Simple ecommerce web application
 
 - product model: name, price, sizes, inventory count [DONE]
 - add on more product details to the view
-- product search should be a listening to an onsubmit
-- product click should redirect to details
+- product search should be submittable [DONE]
+- redirect to filtered products [DONE]
+- extend filtered products capability
+- changed icon and title [DONE]
+- product click should redirect to details [DONE]
 - modularize/organize groups of components, services, directives, etc.
 - product name: can't exceed a certain number of characters (use pipe?)
 - add address to store (contact info page)

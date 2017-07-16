@@ -7,8 +7,12 @@ import { ItemDetailComponent } from '../components/item-detail.component';
 
 const routes: Routes = [
   {
-    path: 'products',
+    path: 'products/:term',
     component: ItemsComponent
+  },
+  {
+    path: 'products',
+    redirectTo: '/products/all'
   },
   {
     path: 'home',

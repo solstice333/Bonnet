@@ -56,4 +56,9 @@ export class ItemSearchComponent implements OnInit {
         let link = ['/detail', item.id];
         this.router.navigate(link);
     }
+
+    submit(term: string) {
+        console.log(term);
+        this.router.navigate(['/products', term]);
+    }
 }

@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Item, Category } from '../item';
 import { ItemService } from '../services/item.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { LoggerService } from '../services/logger.service';
 import { Filter, FilterOpt } from '../filter';
 
@@ -10,29 +10,52 @@ import { Filter, FilterOpt } from '../filter';
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.css']
 })
-export class ItemsComponent { 
+export class ItemsComponent implements OnInit { 
   private items: Item[];
 
-  @Input() filter: Filter = new Filter(FilterOpt.ALL);
+  @Input() filter: Filter;
 
   constructor(
-    private itemService: ItemService, 
+    private itemService: ItemService,
+    private route: ActivatedRoute,
     private router: Router,
     private logger: LoggerService) {}
 
-  ngOnInit(): void {
-    if (this.filter.opt === FilterOpt.ALL) {
+  private setItemsReceivedViaFilter(filter: Filter) {
+    if (filter.opt === FilterOpt.ALL) {
       this.itemService.items
       .then(itemsReceived => this.items = itemsReceived)
       .catch(error => console.error(error));
     }
-    else if (this.filter.opt === FilterOpt.DEALS) {
+    else if (filter.opt === FilterOpt.DEALS) {
       this.itemService.items
       .then(itemsReceived => this.items = itemsReceived.filter(item => {
           return item.hasCategory(new Category('sale'));
         }))
       .catch(error => console.error(error))
     }
+  }
+
+  private initItems() {
+    this.route.params
+      .switchMap(params => new Promise((resolve, reject) => {
+        return params['term'] ? 
+          resolve(params['term']) : reject("term is undefined");
+      }))
+      .map((term: string) => {
+        let foprop = term.toUpperCase();
+        this.filter = FilterOpt.hasOwnProperty(foprop) ?
+          this.filter = new Filter(FilterOpt[foprop]) :
+          this.filter = new Filter(FilterOpt.QUERY, term);
+        return this.filter;
+      })
+      .subscribe(
+        filter => this.setItemsReceivedViaFilter(filter),
+        error => this.setItemsReceivedViaFilter(this.filter));
+  }
+
+  ngOnInit(): void {
+    this.initItems();
     this.items = [];
   }
 
