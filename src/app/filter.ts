@@ -1,7 +1,7 @@
-export class FilterOpt {
-    static DEALS: number = 0
-    static ALL: number = 1
-    static QUERY: number = 2
+export enum FilterOpt {
+    DEALS,
+    ALL,
+    QUERY
 }
 
 export class Filter {
