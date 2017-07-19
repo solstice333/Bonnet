@@ -1,28 +1,29 @@
 # Ecom
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
+## Description
+Simple ecommerce web application
 
-## Development server
+## Usage
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`$ npm install`
 
-## Code scaffolding
+`$ npm start`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+## TODO
 
-## Build
+- product model: name, price, sizes, inventory count [DONE]
+- add on more product details to the view
+- product search should be submittable [DONE]
+- redirect to filtered products [DONE]
+- extend filtered products capability
+- changed icon and title [DONE]
+- product click should redirect to details [DONE]
+- modularize/organize groups of components, services, directives, etc.
+- product name: can't exceed a certain number of characters (use pipe?)
+- add address to store (contact info page)
+- banner
+- start automating tests ASAP
+- checkout page?
+- refactor how filtering is done to get an items component based on category or query string
+- refactor dropdown menu to not use stubs
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
