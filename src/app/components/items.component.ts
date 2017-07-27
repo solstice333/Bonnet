@@ -12,6 +12,7 @@ import { Filter, FilterOpt } from '../filter';
 })
 export class ItemsComponent implements OnInit { 
   private items: Item[];
+  private star = "assets/images/star.png";
 
   @Input() filter: Filter;
 

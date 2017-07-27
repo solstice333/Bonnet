@@ -41,7 +41,7 @@ button.delete {
   display: inline-block;
   width: 20em;
 }
-.items li img {
+.items li .product-img {
   height: 256px;
   width: 256px;
   position: relative;
@@ -64,3 +64,39 @@ button.delete {
   position: relative;
   top: -3px;
 }
+.deets {
+  color: black;
+  font-weight: 100;
+}
+.price {
+  font-weight: bold;
+}
+.price .old-price::after {
+  border-bottom: 0.125em solid black;
+  left: 110px;
+  position: absolute;
+  right: 170px;
+  top: 44%;
+  content: "";
+}
+.price .sale {
+  color: red;
+}
+.price *, .rating * {
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.star-img {
+  position: relative;
+  top: 5px;
+}
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+p.name {
+  margin-top: 15px;
+}
+

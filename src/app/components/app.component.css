@@ -1,7 +1,14 @@
+#headers {
+  position: relative;
+}
 h1 {
   font-size: 1.2em;
   color: #999;
   margin-bottom: 0;
+  display: inline-block;
+  position: absolute;
+  top: 50px;
+  left: 40px;
 }
 h2 {
   font-size: 2em;

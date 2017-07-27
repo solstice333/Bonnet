@@ -1,9 +1,17 @@
 <ul class="items">
     <li *ngFor="let item of items"
         (click)="goToDetail(item)">
-        <img src="{{item.image}}">
+        <img class="product-img" src="{{item.image}}">
         <div class=deets>
-            <p>{{item.name}}</p>
+            <p class="name">{{item.name}}</p>
+            <div class="price">
+                <p *ngIf="item.onSale()" class="old-price">${{item.oldPrice}}</p>
+                <p [class.sale]="item.onSale()">${{item.price.toFixed(2)}}</p>
+            </div>
+            <div class="rating">
+                <img class="star-img" src="{{star}}" width="24" height="24">      
+                <p>{{item.rating.toFixed(1)}} / 5 from {{item.reviewers}} people</p>
+            </div>
         </div>
     </li>
 </ul>

@@ -7,6 +7,7 @@ import { Component } from '@angular/core'
 })
 export class AppComponent {
     private title: string;
+    private image = 'assets/images/bigtree.png';
 
     constructor() {
         this.title = 'Palmdale CocoTree';
