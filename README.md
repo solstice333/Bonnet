@@ -21,6 +21,7 @@ Simple ecommerce web application
 - modularize/organize groups of components, services, directives, etc.
 - product name: can't exceed a certain number of characters (use pipe?)
 - add address to store (contact info page)
+- create item component and separate out from items component
 - banner
 - start automating tests ASAP
 - checkout page?

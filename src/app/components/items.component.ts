@@ -29,9 +29,10 @@ export class ItemsComponent implements OnInit {
     }
     else if (filter.opt === FilterOpt.DEALS) {
       this.itemService.items
-      .then(itemsReceived => this.items = itemsReceived.filter(item => {
-          return item.hasCategory(new Category('sale'));
-        }))
+      .then(itemsReceived => {
+        this.items = itemsReceived.filter(
+          item => item.hasCategory(new Category('sale')))
+      })
       .catch(error => console.error(error))
     }
   }
@@ -40,7 +41,7 @@ export class ItemsComponent implements OnInit {
     this.route.params
       .switchMap(params => new Promise((resolve, reject) => {
         return params['term'] ? 
-          resolve(params['term']) : reject("term is undefined");
+          resolve(params['term']) : reject("FilterAlreadyDefined");
       }))
       .map((term: string) => {
         let foprop = term.toUpperCase();
