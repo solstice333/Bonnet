@@ -11,7 +11,8 @@ import { ItemsComponent } from '../components/items.component'
 import { HomeComponent } from '../components/home.component';
 import { ItemSearchComponent } from '../components/item-search.component';
 
-import { UnlessDirective } from '../directives/unless.directive'
+import { UnlessDirective } from '../directives/unless.directive';
+import { ScrollMonDirective } from '../directives/scroll-mon.directive';
 
 import { CapitalizePipe } from '../pipes/capitalize.pipe';
 
@@ -36,7 +37,8 @@ import { InMemoryDataService } from '../services/in-memory-data.service';
     ItemsComponent,
     HomeComponent,
     CapitalizePipe,
-    ItemSearchComponent
+    ItemSearchComponent,
+    ScrollMonDirective
   ],
   bootstrap: [ // root component that ang creates and inserts 
                // into the index.html host web page

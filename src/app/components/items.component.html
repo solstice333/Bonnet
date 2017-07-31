@@ -21,12 +21,12 @@
         </td>
         <td id="deets-panel">
             <item-detail 
-                [class.below-limit-1]="isBelowLimit(33)"
-                [class.below-limit-2]="isBelowLimit(66)"                
-                [class.below-limit-3]="isBelowLimit(99)"
-                [class.below-limit-4]="isBelowLimit(133)"
-                [class.below-limit-5]="isBelowLimit(166)"                                                
-                [class.below-limit-6]="isBelowLimit(199)" 
+                [ecomScrollMon]="{'below-limit-1': 33, 
+                    'below-limit-2': 66, 
+                    'below-limit-3': 99, 
+                    'below-limit-4': 133, 
+                    'below-limit-5': 166, 
+                    'below-limit-6': 199}"
                 *ngIf="selectedItem" [item]="selectedItem"></item-detail>
         </td>
     </tr>

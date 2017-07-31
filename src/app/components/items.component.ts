@@ -4,6 +4,7 @@ import { ItemService } from '../services/item.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { LoggerService } from '../services/logger.service';
 import { Filter, FilterOpt } from '../filter';
+import { ScrollMonDirective } from '../directives/scroll-mon.directive';
 
 @Component({
   selector: 'items',
@@ -14,7 +15,6 @@ export class ItemsComponent implements OnInit {
   private items: Item[];
   private star: string = "assets/images/star.png";
   private selectedItem: Item;
-  private yoffset: number;
 
   @Input() filter: Filter;
 
@@ -81,14 +81,5 @@ export class ItemsComponent implements OnInit {
   delete(item: Item): void {
     this.itemService.delete(item.id)
       .then(() => this.items = this.items.filter(i => i !== item))
-  }
-
-  @HostListener('window:scroll', ['$event.target']) 
-  onScroll(doc: HTMLDocument): void {
-    this.yoffset = doc.documentElement.scrollTop || window.pageYOffset;
-  }
-
-  isBelowLimit(fromTopPx) {
-    return this.yoffset > fromTopPx;
   }
 }
