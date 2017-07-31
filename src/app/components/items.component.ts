@@ -85,7 +85,7 @@ export class ItemsComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event.target']) 
   onScroll(doc: HTMLDocument): void {
-    this.yoffset = doc.documentElement.scrollTop;
+    this.yoffset = doc.documentElement.scrollTop || window.pageYOffset;
   }
 
   isBelowLimit(fromTopPx) {
