@@ -1,5 +1,17 @@
 import { Directive, Input, ElementRef, HostListener } from '@angular/core';
 
+// monitors the scroll position of the window or document element
+// and sets css classes based on whether the scroll position is
+// below a specified limit. Example usage is as follows:
+//
+// in the template use property binding:
+//
+// <p ecomScrollMon="{'foo': 33, 'bar': 100}">baz</p>
+//
+// when the user scrolls down 33 pixels from the top of the window,
+// class 'foo' will be set on the element. When the user scrolls
+// down 100 pixels from the top of the window, 'foo' will be removed
+// and replaced with 'bar'.
 @Directive({
   selector: '[ecomScrollMon]'
 })
