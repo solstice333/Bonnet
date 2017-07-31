@@ -111,8 +111,8 @@ item-detail {
   left: 70%;
   top: 255px;
   width: 350px;
+  height: 410px;
   overflow-y: scroll;
-  height: 600px;  
 }
 .below-limit-1 {
   position: fixed;
@@ -120,16 +120,21 @@ item-detail {
 } 
 .below-limit-2 {
   top: 180px;
+  height: 450px;
 } 
 .below-limit-3 {
   top: 150px;
+  height: 480px;
 }
 .below-limit-4 {
   top: 115px;
+  height: 500px;
 }
 .below-limit-5 {
   top: 80px;
+  height: 550px;
 }
 .below-limit-6 {
   top: 50px;
+  height: 600px;
 }
