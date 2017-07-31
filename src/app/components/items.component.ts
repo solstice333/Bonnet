@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostListener } from '@angular/core';
 import { Item, Category } from '../item';
 import { ItemService } from '../services/item.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
@@ -12,7 +12,9 @@ import { Filter, FilterOpt } from '../filter';
 })
 export class ItemsComponent implements OnInit { 
   private items: Item[];
-  private star = "assets/images/star.png";
+  private star: string = "assets/images/star.png";
+  private selectedItem: Item;
+  private yoffset: number;
 
   @Input() filter: Filter;
 
@@ -65,6 +67,10 @@ export class ItemsComponent implements OnInit {
     this.router.navigate(['/detail', item.id]);
   }
 
+  displayDetail(item: Item): void {
+    this.selectedItem = item;
+  }
+
   add(name: string): void {
     name = name.trim();
     if (name)
@@ -75,5 +81,14 @@ export class ItemsComponent implements OnInit {
   delete(item: Item): void {
     this.itemService.delete(item.id)
       .then(() => this.items = this.items.filter(i => i !== item))
+  }
+
+  @HostListener('window:scroll', ['$event.target']) 
+  onScroll(doc: HTMLDocument): void {
+    this.yoffset = doc.documentElement.scrollTop;
+  }
+
+  isBelowLimit(fromTopPx) {
+    return this.yoffset > fromTopPx;
   }
 }
