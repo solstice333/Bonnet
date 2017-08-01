@@ -22,10 +22,23 @@ button.delete {
   color:white;
 }
 
-/* item display */
-#items-panel {
-  width: 70%;
+/* panels/containers */
+#items-container {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
 }
+#items-panel {
+  overflow-y: scroll;
+  width: 70%;  
+}
+#deets-panel {
+  overflow-y: scroll;
+  width: 30%;
+  padding: 2%;
+}
+
+/* item display */
 .items {
   margin: 0 0 2em 0;
   list-style-type: none;
@@ -101,40 +114,4 @@ p {
 
 p.name {
   margin-top: 15px;
-}
-#deets-panel {
-  top: 250px;
-  border-left: .2em solid;
-}
-item-detail {
-  position: fixed;
-  left: 70%;
-  top: 255px;
-  width: 350px;
-  height: 410px;
-  overflow-y: scroll;
-}
-.below-limit-1 {
-  position: fixed;
-  top: 215px;
-} 
-.below-limit-2 {
-  top: 180px;
-  height: 450px;
-} 
-.below-limit-3 {
-  top: 150px;
-  height: 480px;
-}
-.below-limit-4 {
-  top: 115px;
-  height: 500px;
-}
-.below-limit-5 {
-  top: 80px;
-  height: 550px;
-}
-.below-limit-6 {
-  top: 50px;
-  height: 600px;
 }

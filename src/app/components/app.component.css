@@ -20,6 +20,8 @@ h2 {
   padding: 10px;
   background-color: darkgrey;
   position: relative;
+  margin: 0;
+  margin-bottom: 1%;
 }
 .navbar li {
   margin: 5px;

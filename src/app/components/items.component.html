@@ -1,33 +1,24 @@
-<table>
-    <tr>
-        <td id="items-panel">
-            <ul class="items">
-                <li *ngFor="let item of items"
-                    (click)="displayDetail(item)">
-                    <img class="product-img" src="{{item.image}}">
-                    <div class=deets>
-                        <p class="name">{{item.name}}</p>
-                        <div class="price">
-                            <p *ngIf="item.onSale()" class="old-price">${{item.oldPrice}}</p>
-                            <p [class.sale]="item.onSale()">${{item.price.toFixed(2)}}</p>
-                        </div>
-                        <div class="rating">
-                            <img class="star-img" src="{{star}}" width="24" height="24">      
-                            <p>{{item.rating.toFixed(1)}} / 5 from {{item.reviewers}} people</p>
-                        </div>
+<div id=items-container>
+    <div id="items-panel">
+        <ul class="items">
+            <li *ngFor="let item of items"
+                (click)="displayDetail(item)">
+                <img class="product-img" src="{{item.image}}">
+                <div class=deets>
+                    <p class="name">{{item.name}}</p>
+                    <div class="price">
+                        <p *ngIf="item.onSale()" class="old-price">${{item.oldPrice}}</p>
+                        <p [class.sale]="item.onSale()">${{item.price.toFixed(2)}}</p>
                     </div>
-                </li>
-            </ul>
-        </td>
-        <td id="deets-panel">
-            <item-detail 
-                [ecomScrollMon]="{'below-limit-1': 33, 
-                    'below-limit-2': 66, 
-                    'below-limit-3': 99, 
-                    'below-limit-4': 133, 
-                    'below-limit-5': 166, 
-                    'below-limit-6': 199}"
-                *ngIf="selectedItem" [item]="selectedItem"></item-detail>
-        </td>
-    </tr>
-</table>
+                    <div class="rating">
+                        <img class="star-img" src="{{star}}" width="24" height="24">      
+                        <p>{{item.rating.toFixed(1)}} / 5 from {{item.reviewers}} people</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="deets-panel">
+        <item-detail *ngIf="selectedItem" [item]="selectedItem"></item-detail>
+    </div>
+</div>
