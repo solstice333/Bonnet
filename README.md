@@ -13,8 +13,8 @@ Simple ecommerce web application
 
 - product model: name, price, sizes, inventory count [DONE]
 - add on more product details to the items template [DONE]
-- side panel to display details
-- more details in item-details template
+- side panel to display details [DONE]
+- mgore details in item-details template
 - product search should be submittable [DONE]
 - redirect to filtered products [DONE]
 - extend filtered products capability
