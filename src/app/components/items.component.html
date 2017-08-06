@@ -2,6 +2,7 @@
     <div id="items-panel">
         <ul class="items">
             <li *ngFor="let item of items"
+                [class.selected]="item === selectedItem"
                 (click)="displayDetail(item)">
                 <img class="product-img" src="{{item.image}}">
                 <div class=deets>
