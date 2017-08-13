@@ -1,7 +1,7 @@
-# Ecom
+# Bonnet
 
 ## Description
-Simple ecommerce web application
+Simple minimal ecommerce web application frontend
 
 ## Usage
 

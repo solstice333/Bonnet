@@ -1,10 +1,10 @@
-import { EcomPage } from './app.po';
+import { BonnetPage } from './app.po';
 
-describe('ecom App', () => {
-  let page: EcomPage;
+describe('bonnet App', () => {
+  let page: BonnetPage;
 
   beforeEach(() => {
-    page = new EcomPage();
+    page = new BonnetPage();
   });
 
   it('should display welcome message', () => {

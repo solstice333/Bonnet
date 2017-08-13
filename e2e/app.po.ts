@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class EcomPage {
+export class BonnetPage {
   navigateTo() {
     return browser.get('/');
   }

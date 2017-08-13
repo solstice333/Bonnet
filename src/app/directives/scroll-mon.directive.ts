@@ -6,17 +6,17 @@ import { Directive, Input, ElementRef, HostListener } from '@angular/core';
 //
 // in the template use property binding:
 //
-// <p ecomScrollMon="{'foo': 33, 'bar': 100}">baz</p>
+// <p bonnetScrollMon="{'foo': 33, 'bar': 100}">baz</p>
 //
 // when the user scrolls down 33 pixels from the top of the window,
 // class 'foo' will be set on the element. When the user scrolls
 // down 100 pixels from the top of the window, 'foo' will be removed
 // and replaced with 'bar'.
 @Directive({
-  selector: '[ecomScrollMon]'
+  selector: '[bonnetScrollMon]'
 })
 export class ScrollMonDirective {
-  @Input('ecomScrollMon') classes_to_limits: object;
+  @Input('bonnetScrollMon') classes_to_limits: object;
 
   private sort_limits_to_classes(): [number, string][] {
     let ntos: [number, string][] = [];
